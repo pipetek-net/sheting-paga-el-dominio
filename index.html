@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		@font-face {font-family: "Jost"; font-weight: 100 900; font-stretch: 75% 125%; font-style: normal; src: url("/fonts/Jost-VariableFont.woff2") format("woff2-variations")}
+		:root {--background: #f0f0f0; --color: #3a3a3a;}
+		html, body, p, a, span {box-sizing: border-box;}
+		html, body {height: 100%;}
+		body {display: flex; justify-content: center; align-items: center; margin: 0; padding: 2em; background: var(--background); color: var(--color);}
+		p {font-family: "Jost", sans-serif; font-weight: 325; font-size: 2em; text-align: center;}
+		a {color: inherit; font-weight: 375; text-decoration: none; transition: font-weight 0.2s;}
+		a:hover {font-weight: 550;}
+		@media (prefers-color-scheme: dark) {:root {--background: #1a1a1a; --color: #e0e0e0;}}
+	</style>
+	<title>Error 402: Pago Requerido</title>
+</head>
+<body>
+	<p>Días desde que <a href="https://github.com/sheting8">Sebastián Hering Emilfork</a> no paga el dominio: <span id="days" title="Calculado desde la fecha de expiración."></span></p>
+	<script>
+		const dateOld = new Date(2022, 03, 18);
+		var dateCurrent = new Date();
+		document.querySelector('span#days').innerHTML = ((dateCurrent.getTime() - dateOld.getTime()) / (1000 * 3600 * 24)).toString().split('.')[0]
+	</script>
+</body>
+</html>
